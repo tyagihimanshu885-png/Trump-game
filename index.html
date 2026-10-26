@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Trump Permanent Final 15 Games</title>
+<script src='https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js'></script>
+<style>
+*{box-sizing:border-box}body{background:radial-gradient(#0f4c3a,#092e24);color:#fff;font-family:system-ui;padding:10px;margin:0}
+.card{background:#fff;color:#111;padding:11px 10px;margin:4px;border-radius:9px;display:inline-block;font-weight:900;cursor:pointer;min-width:46px;text-align:center}
+.card.heart,.card.diamond{color:#c00}.card.selected{outline:3px solid #ffcc00;transform:translateY(-7px)}
+.hand{background:#ffffff18;padding:12px;border-radius:14px;margin:10px 0}
+button{background:linear-gradient(#ffcc00,#ffb700);color:#000;padding:12px 20px;border:none;border-radius:12px;font-weight:900;margin:6px;cursor:pointer}
+input,select{padding:11px;border-radius:10px;border:none;margin:5px;font-weight:bold}
+.badge{background:gold;color:#000;padding:6px 12px;border-radius:20px;font-weight:900}
+.panel{background:#0006;padding:14px;border-radius:14px;margin:10px 0;border:1px solid #ffffff22}
+h2{text-align:center} #log{height:80px;overflow:auto;font-size:12px;background:#0005;padding:8px;border-radius:8px}
+table{width:100%;border-collapse:collapse} th,td{padding:6px;border:1px solid #ffffff22;text-align:center}
+</style></head><body>
+<h2>🃏 Trump Permanent - 15 Games Final</h2>
+<div id="setup" class="panel"><input id="myName" placeholder="Naam A/B/C/D"><br><button onclick="createRoom()">ROOM BANAO</button><br><br><input id="joinId" placeholder="Room ID"><button onclick="joinRoom()">JOIN</button><div id="myIdShow"></div></div>
+<div id="lobby" class="panel" style="display:none">Room ID: <b id="roomId" class="badge"></b><div id="pList"></div><div id="dealerInfo" class="badge" style="background:#aaffaa"></div><button id="startBtn" onclick="deal5()" style="display:none">5 Patte Baanto</button><div id="log"></div></div>
+<div id="game" style="display:none">
+<div class="panel">Game: <b id="gameNo" class="badge">1/15</b> | Dealer: <span id="dealerShow" class="badge">-</span> | Chooser: <span id="chooserShow" class="badge" style="background:#ffccaa">-</span> | Trump: <span id="trumpShow" class="badge">-</span> | Bid: <span id="currBidShow" class="badge">-</span></div>
+<div class="panel"><b>Bids:</b> <span id="bidsShow"></span></div>
+<div id="chooserDiv" class="panel" style="display:none;border:2px solid gold"><b id="chooserText"></b><br>Trump: <select id="tSel"><option>♠️</option><option>♥️</option><option>♦️</option><option>♣️</option></select> Bid: <select id="bSel"><option>1</option><option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option><option>7</option></select> <button onclick="setInitialTrump()">Lock</button></div>
+<div id="finalBidDiv" class="panel" style="display:none;border:2px solid #7af"><b>13 patte dekh
